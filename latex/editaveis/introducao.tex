@@ -55,3 +55,22 @@ While the global necessity for autoformalization is well-established, deploying 
 \textbf{Institutional Preservation and Academic Modernization at UnB.} A critical bottleneck in training mathematical AI is the severe shortage of high-quality, aligned formal data. Autoformalization serves as a vital data-generation engine. By specifically targeting recent dissertations and theses from the Department of Mathematics at the University of Brasília (DEPMAT/UnB), this project transcends theoretical exploration and delivers immediate institutional value. It initiates the creation of a formally verified, machine-readable repository of the department's intellectual output. This not only preserves localized academic contributions with absolute rigor but also provides the broader community with a novel dataset of formalized algebra and number theory.
 
 \textbf{Democratizing Open-Source Mathematical AI.} The most advanced neuro-symbolic theorem provers are currently locked behind the proprietary infrastructure of major industry labs. This creates an accessibility barrier for academic researchers and students. By focusing on the fine-tuning of existing open-source reasoning models and explicitly committing to publishing the resulting model and formalization repository online, this project actively democratizes formal verification. It ensures that the tools and datasets required to accelerate scientific discovery and power next-generation educational systems remain accessible to the broader academic community.
+
+\section{Objectives}
+
+
+\subsection{General Objective}
+
+Develop and evaluate an agentic autoformalization pipeline, utilizing fine-tuned reasoning models and human-in-the-loop protocols, to translate informal mathematical definitions, lemmas, and foundational theorems into the formal Lean4 language
+
+\subsection{Specific Objectives}
+
+\begin{enumerate}
+    \item Synthesize current literature on neuro-symbolic AI and evaluate existing agentic architectures to determine optimal baseline models for autoformalization.
+    \item Develop an agentic autoformalization pipeline centered on the fine-tuning of existing large reasoning models, specifically tailored to translate informal algebra and number theory statements from LaTeX to Lean4.
+    \item Implement an iterative reinforcement learning paradigm—akin to Expert Iteration—whereby successfully compiled Lean4 proofs are fed back into the model for continuous self-improvement.
+    \item Establish a human-in-the-loop (HITL) protocol to resolve complex formalization bottlenecks, utilizing human intervention to complete stalled tasks and subsequently enriching the model's training data.
+    \item Use the model to formalize selected definitions, lemmas, and foundational theorems extracted from recent dissertations and theses at the Department of Mathematics of the University of Brasília (DEPMAT/UnB), then systematically evaluate and validate the resulting formalizations in consultation with domain experts at DEPMAT/UnB and FCTE/UnB.
+    \item Publish successful formalizations online, establishing a foundational open-source repository of selected recent work from the Department of Mathematics.
+    \item Open-source the developed model in online platforms, like HuggingFace.
+\end{enumerate}
