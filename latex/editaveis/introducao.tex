@@ -1,15 +1,3 @@
-% \chapter*[Introdução]{Introdução}
-% \addcontentsline{toc}{chapter}{Introdução}
-
-% Este documento apresenta considerações gerais e preliminares relacionadas 
-% à redação de relatórios de Projeto de Graduação da Faculdade UnB Gama 
-% (FGA). São abordados os diferentes aspectos sobre a estrutura do trabalho, 
-% uso de programas de auxilio a edição, tiragem de cópias, encadernação, etc.
-
-% Este template é uma adaptação do ABNTeX2\footnote{\url{https://github.com/abntex/abntex2/}}.
-
-\part{Introduction}
-
 \chapter[Introduction]{Introduction}
 
 \section{Contextualization}
@@ -44,11 +32,16 @@ The neuro-symbolic convergence naturally requires an agentic workflow: Rather th
 
 Major industry players are investing heavily in this transition, pushing models away from merely "guessing" text toward actively verifying their logic to discover new mathematics:
 
-Google DeepMind recently achieved a historic milestone with its AlphaProof and AlphaGeometry systems, which successfully solved four out of six problems at the 2024 International Mathematical Olympiad (IMO) [p5, 18]. AlphaGeometry perfectly exemplifies the neuro-symbolic approach: it uses a neural network to navigate the difficult, creative steps of geometric proofs (like drawing auxiliary constructions), while relying on a symbolic engine to systematically deduce the resulting facts [p5, 19]. DeepMind has also leveraged machine learning to guide human intuition in advanced research, helping mathematicians discover new patterns and formulate theorems in knot theory and representation theory [p5, 20].
-
-OpenAI has actively pushed its models toward complex, inference-time reasoning. The o3 model series demonstrated a massive leap in capability on the FrontierMath benchmark—a highly guarded dataset composed entirely of unpublished, research-level mathematics designed to prevent data contamination [p5, 21, 22]. While previous general-purpose models scored below 2\% on this benchmark, the o3 model reportedly achieved a substantially higher score of around 25\%, highlighting the power of autonomous, multi-step logical deduction [p5, 22].
-
-DeepSeek and others are advancing systems like DeepSeek-Prover, which tightly integrates model training with formal verification. Through a process called Reinforcement Learning from Proof Assistant Feedback (RLPAF), the model's generated tactics are executed in real-time within the Lean environment. The compiler provides dense, step-by-step validation that serves as a reward signal, explicitly training the neural network to align its outputs with strict logical validity rather than textual mimicry [p5, 23].
+\begin{itemize}
+    \item Google DeepMind recently achieved a historic milestone with its AlphaProof and AlphaGeometry systems, which successfully solved four out of six problems at the 2024 International Mathematical Olympiad (IMO) [p5, 18]. AlphaGeometry perfectly exemplifies the neuro-symbolic approach: it uses a neural network to navigate the difficult, creative steps of geometric proofs (like drawing auxiliary constructions), while relying on a symbolic engine to systematically deduce the resulting facts [p5, 19]. DeepMind has also leveraged machine learning to guide human intuition in advanced research, helping mathematicians discover new patterns and formulate theorems in knot theory and representation theory [p5, 20].
+    \item OpenAI has actively pushed its models toward complex, inference-time reasoning. The o3 model series demonstrated a massive leap in capability on the FrontierMath benchmark—a highly guarded dataset composed entirely of unpublished, research-level mathematics designed to prevent data contamination [p5, 21, 22]. While previous general-purpose models scored below 2\% on this benchmark, the o3 model reportedly achieved a substantially higher score of around 25\%, highlighting the power of autonomous, multi-step logical deduction [p5, 22].
+    \item DeepSeek and others are advancing systems like DeepSeek-Prover, which tightly integrates model training with formal verification. Through a process called Reinforcement Learning from Proof Assistant Feedback (RLPAF), the model's generated tactics are executed in real-time within the Lean environment. The compiler provides dense, step-by-step validation that serves as a reward signal, explicitly training the neural network to align its outputs with strict logical validity rather than textual mimicry [p5, 23].
+\end{itemize}
 
 Ultimately, this industry push aims to transform AI from a tool that merely formalizes existing literature into an autonomous engine for mathematical discovery. In the future, agentic AI systems hooked to formal environments could allow mathematicians to study hundreds of complex equations simultaneously—working out an argument for one equation and deploying the AI to autonomously adapt, formalize, and rigorously verify the proofs for large families of related problems at a scale previously unimaginable [p5, 24].
+
 Despite the rapid advancements by industry leaders in training foundational models for mathematics, achieving reliable, autonomous autoformalization remains a formidable challenge. Current architectures are severely constrained by several fundamental bottlenecks. Primary among these is data scarcity; unlike natural language or standard programming languages, the corpus of aligned, high-quality parallel data mapping informal LaTeX mathematics to formalized Lean4 code is exceedingly small. Furthermore, the translation process is intrinsically non-trivial. Human-written mathematical proofs are inherently underspecified, relying heavily on the reader's contextual intuition and domain expertise to bridge implicit logical gaps. In contrast, formal theorem provers like Lean4 demand exhaustive, explicit structural rigor. Consequently, when large language models attempt direct, single-pass translations, they frequently suffer from cascading logical errors, hallucination, or compilation failure. To mitigate these limitations, recent literature suggests transitioning away from monolithic generation toward structured agentic workflows. By integrating iterative self-training methodologies—where compiler feedback is utilized to continuously refine the model—and establishing human-in-the-loop (HITL) protocols to resolve edge cases, the formalization of complex, graduate-level mathematics becomes highly tractable. Testing these orchestration techniques on specific, localized academic curricula presents a vital opportunity to evaluate the practical viability of these systems.
+
+\section{The Research Question}
+
+The intersection of immense technological potential and persistent translational bottlenecks directly motivates the central inquiry of this project. Specifically, this work seeks to address the following research question: \textbf{To what extent can neuro-symbolic and agentic AI architectures accurately translate informal mathematical proofs (LaTeX) into formal Lean4 code within the domains of algebra and number theory?}
